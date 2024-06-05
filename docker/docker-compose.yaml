@@ -1,0 +1,29 @@
+services:
+  # app:
+  #   build:
+  #     context: ../
+  #     dockerfile: docker/Dockerfile.dev
+  #     dockerfile: docker/Dockerfile.prod
+  #   depends_on:
+  #     - database
+  #   env_file:
+  #     - ../.env
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ../:/app
+
+  database:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:

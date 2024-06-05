@@ -1,0 +1,28 @@
+type Project {
+  id: ID!
+  name: String!
+  tasks: [Task!]!
+}
+
+type Task {
+  id: ID!
+  name: String!
+  projectId: ID!
+}
+
+type Query {
+  projects: [Project!]!
+
+  tasks: [Task!]!
+}
+
+input CreateTaskInput {
+  name: String!
+  projectId: ID!
+}
+
+type Mutation {
+  createProject(name: String!): Project!
+
+  createTask(input: CreateTaskInput!): Task!
+}

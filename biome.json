@@ -1,0 +1,35 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.6.3/schema.json",
+  "files": {
+    "ignore": [
+      "__generated__/**",
+      ".next/**",
+      "node_modules/**",
+      "src/components/ui/**"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space"
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "nursery": {
+        "useSortedClasses": "warn"
+      },
+      "recommended": true,
+      "style": {
+        "useConsistentArrayType": "off",
+        "useExportType": "warn",
+        "useImportType": "warn"
+      },
+      "suspicious": {
+        "useAwait": "off"
+      }
+    }
+  }
+}
